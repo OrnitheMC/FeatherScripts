@@ -60,10 +60,13 @@ def add_to_dict(file: str):
 
 
 class DuplicateMappings(Exception):
-    """Exception raised when duplicate mappings are found
+    """
+    Exception raised when duplicate mappings are found.
 
     Attributes:
-        the Exception message
+        the amount of classes that have duplicates
+        the dictionary containing the duplicates
+        the Exception message (set by default but is able to be overridden)
     """
 
     def __init__(self, n, duplicates, message="Duplicate mappings found for {} classes"):
@@ -76,6 +79,10 @@ class DuplicateMappings(Exception):
         return f'{self.message}\n\n{self.get_formatted_duplicates()}'
 
     def get_formatted_duplicates(self):
+        """
+        A function that formats the duplicates that have been found in a nice human readable output.
+        :return: a string containing the duplicates to output as a message
+        """
         duplicates_string = ''
         for key in self.duplicates:
             duplicates_string += f'Duplicates ({len(self.duplicates[key])}) found of {key} mapped as:\n'
