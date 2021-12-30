@@ -4,7 +4,7 @@ from collections import defaultdict
 from os.path import isfile, join
 
 """---- Config ----"""
-path = "mappings"  # the path to the mappings folder
+path = "..\\mappings"  # the path to the mappings folder
 mappings = defaultdict(list)  # the dictionary to put the mappings in
 
 
